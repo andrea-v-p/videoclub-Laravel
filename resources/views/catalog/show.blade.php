@@ -6,14 +6,24 @@
 
 		<div class="col-sm-4">
 
-		{{-- TO DO: Imagen de la película --}}
+		<img src="{{$pelicula->poster}}"/>
 
 		</div>
 		<div class="col-sm-8">
-			{{-- TO DO: Datos de la pelicula --}}
+			<h1>{{$pelicula->title}}</h1>
+			<h2>Año: {{$pelicula->year}}</h2>
+			<h2>Director: {{$pelicula->director}}</h2>
+			<p>Resumen: {{$pelicula->synopsis}}</p>
+			
+			@if( $pelicula->rented == 1 )
+				<p>Estado: La pelicula esta actualmente alquilada</p>
+			@else
+				<p>Estado: Disponible</p>
+			@endif
 
 		</div>
 	</div>
+	<br>
 	<div class="row">
 		<a type="button" class="btn btn-primary">Alquilar película</a>
 		<a type="button" class="btn btn-danger">Devolver película</a>

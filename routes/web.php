@@ -28,3 +28,6 @@ Route::get('catalog/show/{id}', 'CatalogController@getShow');
 Route::get('catalog/create', 'CatalogController@getCreate');
 
 Route::get('catalog/edit/{id}', 'CatalogController@getEdit');
+Route::post('catalog/edit/{id}', 'CatalogController@update');
+
+Route::get('catalog/rented/{id}', 'CatalogController@rented');

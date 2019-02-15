@@ -25,10 +25,14 @@
 	</div>
 	<br>
 	<div class="row">
-		<a type="button" class="btn btn-primary">Alquilar película</a>
-		<a type="button" class="btn btn-danger">Devolver película</a>
-		<a type="button" class="btn btn-warning">Editar Pelicula</a>
-		<a type="button" class="btn btn-light">Volver al listado</a>
+		@if( $pelicula->rented == 1 )
+			<a type="button" class="btn btn-danger" href="{{ URL::to('/catalog/rented/'.$pelicula->id) }}">Devolver película</a>
+		@else
+			<a type="button" class="btn btn-primary" href="{{ URL::to('/catalog/rented/'.$pelicula->id) }}">Alquilar película</a>
+		@endif
+
+		<a type="button" class="btn btn-warning" href="{{ URL::to('/catalog/edit/'.$pelicula->id) }}">Editar Pelicula</a>
+		<a type="button" class="btn btn-light" href="{{ URL::to('/catalog') }}">Volver al listado</a>
 	</div>
 
 @stop
